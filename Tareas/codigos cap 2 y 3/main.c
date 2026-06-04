@@ -6,42 +6,30 @@ int main()
     printf("Hello world!\n");
     return 0;
 }
-# include <stdio.h>
-/* Empresa textil.
-El programa, al recibir como datos decisivos la categoría y antigüedad de
-➥un empleado, determina si el mismo reúne las condiciones establecidas por
-➥la empresa para ocupar un nuevo cargo en una sucursal.
+#include <stdio.h>
+#include <math.h>
+/* Función.
+El programa, al recibir como dato un valor entero, calcula el resultado de
+➥una función.
 
-CLA, CAT, ANT, RES: variables de tipo entero.
-SAL: variable de tipo real. */
+Y: variable de tipo entero.
+X: variable de tipo real. */
 
 void main(void)
 {
-int CLA, CAT, ANT, RES;
-printf(“\nIngrese la clave, categoría y antigüedad del trabajador:”);
-scanf(“%d %d %d”, &CLA, &CAT, &ANT);
-switch(CAT)
-{
-      case 3:
-    case 4: if (ANT >= 5)
-                RES = 1;
-            else
-                  RES = 0;
-           break;
-        case 2: if (ANT >= 7)
-                RES = 1;
-            else
-                    RES = 0;
-           break;
-    default: RES = 0;
-           break;
-}
-if (RES)
-printf(“\nEl trabajador con clave %d reúne las condiciones para el
-➥puesto”, CLA);
-
+ float X;
+ int Y;
+ printf(“Ingrese el valor de Y: “);
+scanf(“%d”, &Y);
+if (Y < 0 | | Y > 50)
+       X = 0;
 else
-
-printf(“\nEl trabajador con clave %d no reúne las condiciones para
-➥el puesto”, CLA);
+    if (Y <= 10)
+         X = 4 / Y - Y;
+else
+    if (Y <= 25)
+         X = pow(Y, 3) - 12;
+else
+    X = pow(Y, 2) + pow(Y, 3) – 18;
+printf(“\n\nY = %d\tX = %8.2f”, Y, X);
 }
